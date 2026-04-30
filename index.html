@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOGLC — Leadership and Management Consulting</title>
+    <meta
+      name="description"
+      content="Damilola Olaniyi Global Leadership Consultancy. Leadership development, organisational transformation, and management consulting for organisations that demand measurable outcomes."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="assets/css/main.css?v=20260430-10" />
+    <link rel="stylesheet" href="assets/css/tuning.css?v=20260430-10" />
+    <script defer src="assets/js/main.js"></script>
+  </head>
+
+  <body>
+    <!-- ═══ NAV ═══ -->
+    <nav id="nav" class="at-top">
+      <div class="nav-inner">
+        <a href="#hero" class="nav-logo" aria-label="DOGLC home">
+          <span class="nav-wordmark" aria-hidden="true"><span>DOG</span>LC</span>
+          <img class="nav-logo-img" src="assets/img/logo.png" alt="DOGLC" />
+        </a>
+
+        <div class="nav-items">
+          <!-- Services mega-drop -->
+          <div class="nav-item">
+            <button type="button">Services</button>
+            <div class="mega-drop mega-services">
+              <div>
+                <div class="mega-col-label">Offerings</div>
+                <div class="mega-cards">
+                  <div class="mega-card" onclick="showSvcTab('org');scrollToSection('services')">
+                    <div class="mega-card-title">Organisational</div>
+                    <div class="mega-card-sub">Change management, culture, team performance</div>
+                  </div>
+                  <div class="mega-card" onclick="showSvcTab('leadership');scrollToSection('services')">
+                    <div class="mega-card-title">Leadership and HR</div>
+                    <div class="mega-card-sub">Executive programmes, new managers, HR audit</div>
+                  </div>
+                  <div class="mega-card" onclick="showSvcTab('individual');scrollToSection('services')">
+                    <div class="mega-card-title">Individual and Advisory</div>
+                    <div class="mega-card-sub">Coaching, mentorship, founder advisory, speaking</div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="mega-col-label">Popular Services</div>
+                <div class="mega-links">
+                  <a href="#services" onclick="showSvcTab('org')">Change Management</a>
+                  <a href="#services" onclick="showSvcTab('leadership')">Executive Development</a>
+                  <a href="#services" onclick="showSvcTab('leadership')">New Manager Programme</a>
+                  <a href="#services" onclick="showSvcTab('individual')">Personal Mentorship</a>
+                  <a href="#services" onclick="showSvcTab('individual')">Speaking Engagements</a>
+                  <a href="#services" onclick="showSvcTab('individual')">Founder Advisory</a>
+                </div>
+              </div>
+              <div>
+                <div class="mega-col-label">Who We Support</div>
+                <div class="mega-links">
+                  <a href="#support" onclick="switchSupport(document.querySelectorAll('.stab')[0],'s-corp')"
+                    >Corporate Organisations</a
+                  >
+                  <a href="#support" onclick="switchSupport(document.querySelectorAll('.stab')[1],'s-health')"
+                    >Healthcare Institutions</a
+                  >
+                  <a href="#support" onclick="switchSupport(document.querySelectorAll('.stab')[2],'s-founder')"
+                    >Founders and SMEs</a
+                  >
+                  <a href="#support" onclick="switchSupport(document.querySelectorAll('.stab')[3],'s-gov')"
+                    >Government</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- About mega-drop -->
+          <div class="nav-item">
+            <button type="button">About</button>
+            <div class="mega-drop mega-about">
+              <div>
+                <div class="mega-col-label">Company</div>
+                <div class="mega-links">
+                  <a href="#problem">Why DOGLC</a>
+                  <a href="#testimonials">Client Voices</a>
+                  <a href="#cta" onclick="openModal('General Enquiry');return false;">Book a Session</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-actions">
+          <a class="nav-link" href="mailto:info@damilolaolaniyi.com">Contact Us</a>
+          <button type="button" class="nav-cta" onclick="openModal('General Enquiry')">Book a Session</button>
+        </div>
+
+        <div class="nav-ham" id="navHam" onclick="toggleMobile()">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- MOBILE NAV -->
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#services" onclick="closeMobile()">Services</a>
+      <a href="#capabilities" onclick="closeMobile()">Industries</a>
+      <a href="#why" onclick="closeMobile()">About</a>
+      <button type="button" class="mn-cta" onclick="openModal('General Enquiry');closeMobile()">Book a Session</button>
+    </div>
+
+    <!-- ═══ HERO ═══ -->
+    <section id="hero">
+      <div class="hero-grid"></div>
+      <div class="hero-glow"></div>
+
+      <div class="hero-layout">
+        <div class="hero-inner">
+          <div class="hero-eyebrow">Leadership &amp; Management Consulting</div>
+          <h1 class="hero-h1">
+            Transformation that <em>lasts.</em>
+          </h1>
+          <p class="hero-sub">We develop leaders, strengthen systems, and deliver measurable change—staying with you through implementation.</p>
+          <div class="hero-btns">
+            <a href="#services" class="btn-primary">Explore Services</a>
+            <a href="#cta" class="btn-outline-light" onclick="openModal('General Enquiry');return false;">Start a Conversation</a>
+          </div>
+          <div class="hero-stats">
+            <div class="hs">
+              <div class="hs-n">2,000+</div>
+              <div class="hs-l">Leaders developed</div>
+            </div>
+            <div class="hs">
+              <div class="hs-n">10</div>
+              <div class="hs-l">Service offerings</div>
+            </div>
+            <div class="hs">
+              <div class="hs-n">4</div>
+              <div class="hs-l">Sectors served</div>
+            </div>
+            <div class="hs">
+              <div class="hs-n">24h</div>
+              <div class="hs-l">Session confirmation</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-col-photo" aria-hidden="true">
+          <img class="hero-portrait" src="assets/img/image1.jpeg" alt="Damilola Olaniyi" />
+          <div class="hero-portrait-badge">
+            <div class="hpb-name">Damilola Olaniyi</div>
+            <div class="hpb-role">Leadership &amp; Management Consultant</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ TRUSTED STRIP ═══ -->
+    <div id="trusted">
+      <div class="trusted-inner">
+        <div class="trusted-label">Trusted by</div>
+        <div class="trusted-logos">
+          <span class="trusted-logo">Financial Services</span>
+          <span class="trusted-logo">Healthcare Groups</span>
+          <span class="trusted-logo">Government Agencies</span>
+          <span class="trusted-logo">Growth-Stage Founders</span>
+          <span class="trusted-logo">Corporate Organisations</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ TESTIMONIALS ═══ -->
+    <section id="testimonials">
+      <div class="testimonials-inner">
+        <div class="reveal">
+          <div class="sec-eyebrow-dark">Client voices</div>
+          <h2 class="sec-h2">What organisations say about <em>working with us.</em></h2>
+        </div>
+        <div class="t-grid reveal">
+          <div class="t-card">
+            <div class="t-stars">★★★★★</div>
+            <p class="t-quote">
+              "DOGLC restructured our entire change implementation. Adoption went from 30% to over 80% within three
+              months."
+            </p>
+            <div class="t-name">Chief Operating Officer</div>
+            <div class="t-role">Financial Services Organisation</div>
+          </div>
+          <div class="t-card dark">
+            <div class="t-stars">★★★★★</div>
+            <p class="t-quote">
+              "We promoted 12 new managers with no support system. DOGLC's programme made an immediate difference — team
+              performance improved within weeks."
+            </p>
+            <div class="t-name">Head of Human Resources</div>
+            <div class="t-role">Healthcare Group</div>
+          </div>
+          <div class="t-card">
+            <div class="t-stars">★★★★★</div>
+            <p class="t-quote">
+              "The HR audit uncovered gaps we had overlooked for years. The recommendations were practical and most have
+              now been implemented."
+            </p>
+            <div class="t-name">Managing Director</div>
+            <div class="t-role">Manufacturing Company</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SERVICES TABBED ═══ -->
+    <section id="services">
+      <div class="services-inner">
+        <div class="reveal">
+          <div class="sec-eyebrow-dark">Services</div>
+          <h2 class="sec-h2">Leadership and management <em>consulting services</em></h2>
+        </div>
+        <div class="svc-tabs-row reveal">
+          <button type="button" class="svctab active" onclick="showSvcTab('org',this)">Organisational</button>
+          <button type="button" class="svctab" onclick="showSvcTab('leadership',this)">Leadership and HR</button>
+          <button type="button" class="svctab" onclick="showSvcTab('individual',this)">Individual and Advisory</button>
+        </div>
+
+        <div class="svc-panels">
+          <div class="svc-panel active" id="sp-org">
+            <div class="svc-grid">
+              <div class="svc-card reveal">
+                <div class="svc-head">
+                  <span class="svc-cat">Organisational</span>
+                  <div class="svc-name">Change Management and Implementation</div>
+                </div>
+                <div class="svc-body">
+                  <p class="svc-desc">
+                    Structured adoption plans that turn change into sustained behaviour.
+                  </p>
+                  <p class="svc-for">
+                    Best for:
+                    <span>Restructures, system rollouts, and culture shifts</span>
+                  </p>
+                  <div class="svc-steps">
+                    <p class="svc-steps-label">How It Works</p>
+                    <div class="svc-step">
+                      <div class="svc-step-n">1</div>
+                      <div class="svc-step-t">
+                        Organisational Readiness Assessment
+                        <em>Stakeholders, champions, and resistance map</em>
+                      </div>
+                    </div>
+                    <div class="svc-step">
+                      <div class="svc-step-n">2</div>
+                      <div class="svc-step-t">
+                        Change Architecture Design
+                        <em>Comms, training, and adoption milestones</em>
+                      </div>
+                    </div>
+                    <div class="svc-step">
+                      <div class="svc-step-n">3</div>
+                      <div class="svc-step-t">
+                        Implementation and Reinforcement
+                        <em>On-the-ground rollout and reinforcement</em>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="svc-footer">
+                  <button type="button" class="svc-btn" onclick="openModal('Change Management and Implementation')">
+                    Book This Service
+                  </button>
+                </div>
+              </div>
+
+              <div class="svc-card reveal">
+                <div class="svc-head">
+                  <span class="svc-cat">Organisational</span>
+                  <div class="svc-name">Organisational Culture Transformation</div>
+                </div>
+                <div class="svc-body">
+                  <p class="svc-desc">
+                    Diagnose the current culture, define the target, and embed the behaviours your strategy needs.
+                  </p>
+                  <p class="svc-for">
+                    Best for: <span>Post-merger integration, performance plateaus, leadership transitions</span>
+                  </p>
+                  <div class="svc-steps">
+                    <p class="svc-steps-label">How It Works</p>
+                    <div class="svc-step">
+                      <div class="svc-step-n">1</div>
+                      <div class="svc-step-t">Culture Diagnostic <em>Surveys and interviews</em></div>
+                    </div>
+                    <div class="svc-step">
+                      <div class="svc-step-n">2</div>
+                      <div class="svc-step-t">Culture Design Workshop <em>Values and behaviour definition</em></div>
+                    </div>
+                    <div class="svc-step">
+                      <div class="svc-step-n">3</div>
+                      <div class="svc-step-t">Embedding and Measurement <em>Rituals, accountability, tracking</em></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="svc-footer">
+                  <button type="button" class="svc-btn" onclick="openModal('Organisational Culture Transformation')">
+                    Book This Service
+                  </button>
+                </div>
+              </div>
+
+              <div class="svc-card reveal">
+                <div class="svc-head">
+                  <span class="svc-cat">Organisational</span>
+                  <div class="svc-name">Team Performance and Productivity Intervention</div>
+                </div>
+                <div class="svc-body">
+                  <p class="svc-desc">
+                    Reset team clarity and ways of working by removing systemic blockers to performance.
+                  </p>
+                  <p class="svc-for">Best for: <span>High-potential teams with persistent underperformance or conflict</span></p>
+                  <div class="svc-steps">
+                    <p class="svc-steps-label">How It Works</p>
+                    <div class="svc-step">
+                      <div class="svc-step-n">1</div>
+                      <div class="svc-step-t">Team Performance Audit <em>Clarity, structure, and dynamics</em></div>
+                    </div>
+                    <div class="svc-step">
+                      <div class="svc-step-n">2</div>
+                      <div class="svc-step-t">Targeted Intervention Design <em>Workshops, coaching, structural fixes</em></div>
+                    </div>
+                    <div class="svc-step">
+                      <div class="svc-step-n">3</div>
+                      <div class="svc-step-t">Performance Tracking <em>KPIs and follow-up checkpoints</em></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="svc-footer">
+                  <button type="button" class="svc-btn" onclick="openModal('Team Performance and Productivity Intervention')">
+                    Book This Service
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="svc-panel" id="sp-leadership">
+            <div class="svc-grid">
+              <div class="svc-card reveal">
+                <div class="svc-head">
+                  <span class="svc-cat">Leadership Development</span>
+                  <div class="svc-name">Executive Leadership Development Programme</div>
+                </div>
+                <div class="svc-body">
+                  <p class="svc-desc">
+                    A structured programme to strengthen strategy, executive presence, and leadership team performance.
+                  </p>
+                  <p class="svc-for">Best for: <span>C-suite, Directors, and senior leadership cohorts</span></p>
+                  <div class="svc-steps">
+                    <p class="svc-steps-label">How It Works</p>
+                    <div class="svc-step">
+                      <div class="svc-step-n">1</div>
+                      <div class="svc-step-t">Leadership Assessment <em>360 feedback and competency mapping</em></div>
+                    </div>
+                    <div class="svc-step">
+                      <div class="svc-step-n">2</div>
+                      <div class="svc-step-t">Bespoke Programme Design <em>Workshops and peer learning</em></div>
+                    </div>
+                    <div class="svc-step">
+                      <div class="svc-step-n">3</div>
+                      <div class="svc-step-t">Ongoing Coaching and Review <em>Sessions and milestone accountability</em></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="svc-footer">
+                  <button type="button" class="svc-btn featured" onclick="openModal('Executive Leadership Development Programme')">
+                    Book This Service
+                  </button>
+                </div>
+              </div>
+
+              <div class="svc-card reveal">
+                <div class="svc-head">
+                  <span class="svc-cat">Leadership Development</span>
+                  <div class="svc-name">New Manager Transition Programme</div>
+                </div>
+                <div class="svc-body">
+                  <p class="svc-desc">
+                    Help new managers move from individual contributor to confident people leader—fast.
+                  </p>
+                  <p class="svc-for">Best for: <span>First-time managers and recently promoted team leads</span></p>
+                  <div class="svc-steps">
+                    <p class="svc-steps-label">How It Works</p>
+                    <div class="svc-step">
+                      <div class="svc-step-n">1</div>
+                      <div class="svc-step-t">Needs Assessment <em>Role expectations and skill gaps</em></div>
+                    </div>
+                    <div class="svc-step">
+                      <div class="svc-step-n">2</div>
+                      <div class="svc-step-t">Cohort Programme Delivery <em>Practical modules (8–12 weeks)</em></div>
+                    </div>
+                    <div class="svc-step">
+                      <div class="svc-step-n">3</div>
+                      <div class="svc-step-t">Manager Check-ins <em>Follow-up and progress review</em></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="svc-footer">
+                  <button type="button" class="svc-btn" onclick="openModal('New Manager Transition Programme')">Book This Service</button>
+                </div>
+              </div>
+
+              <div class="svc-card reveal">
+                <div class="svc-head">
+                  <span class="svc-cat">HR and People</span>
+                  <div class="svc-name">HR Systems Audit and Restructuring</div>
+                </div>
+                <div class="svc-body">
+                  <p class="svc-desc">
+                    Audit and redesign your people infrastructure to reduce risk and support scale.
+                  </p>
+                  <p class="svc-for">Best for: <span>Scaling organisations, post-restructures, and HR transformation projects</span></p>
+                  <div class="svc-steps">
+                    <p class="svc-steps-label">How It Works</p>
+                    <div class="svc-step">
+                      <div class="svc-step-n">1</div>
+                      <div class="svc-step-t">HR Audit <em>Policies, structure, compliance, gaps</em></div>
+                    </div>
+                    <div class="svc-step">
+                      <div class="svc-step-n">2</div>
+                      <div class="svc-step-t">Redesign and Documentation <em>Frameworks, job architecture, policies</em></div>
+                    </div>
+                    <div class="svc-step">
+                      <div class="svc-step-n">3</div>
+                      <div class="svc-step-t">Implementation Support <em>Change comms and staff enablement</em></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="svc-footer">
+                  <button type="button" class="svc-btn" onclick="openModal('HR Systems Audit and Restructuring')">Book This Service</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="svc-panel" id="sp-individual">
+            <div class="svc-grid">
+              <div class="svc-card reveal">
+                <div class="svc-head">
+                  <span class="svc-cat">Individual</span>
+                  <div class="svc-name">Personal Mentorship</div>
+                </div>
+                <div class="svc-body">
+                  <p class="svc-desc">
+                    Ongoing mentorship for career moves, leadership challenges, and personal growth goals.
+                  </p>
+                  <p class="svc-for">Best for: <span>Mid-career professionals, rising leaders, and first-time executives</span></p>
+                  <div class="svc-steps">
+                    <p class="svc-steps-label">How It Works</p>
+                    <div class="svc-step">
+                      <div class="svc-step-n">1</div>
+                      <div class="svc-step-t">Discovery Session <em>Goals, context, and priorities</em></div>
+                    </div>
+                    <div class="svc-step">
+                      <div class="svc-step-n">2</div>
+                      <div class="svc-step-t">Monthly Mentorship Sessions <em>Accountability and practical support</em></div>
+                    </div>
+                    <div class="svc-step">
+                      <div class="svc-step-n">3</div>
+                      <div class="svc-step-t">Progress Reviews <em>Track progress and adjust direction</em></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="svc-footer">
+                  <button type="button" class="svc-btn featured" onclick="openModal('Personal Mentorship')">Book This Service</button>
+                </div>
+              </div>
+
+              <div class="svc-card reveal">
+                <div class="svc-head">
+                  <span class="svc-cat">Individual</span>
+                  <div class="svc-name">Executive and Leadership Coaching</div>
+                </div>
+                <div class="svc-body">
+                  <p class="svc-desc">
+                    Confidential coaching for senior leaders navigating decisions, transitions, and performance plateaus.
+                  </p>
+                  <p class="svc-for">Best for: <span>C-suite executives, senior directors, and high-potential leaders</span></p>
+                  <div class="svc-steps">
+                    <p class="svc-steps-label">How It Works</p>
+                    <div class="svc-step">
+                      <div class="svc-step-n">1</div>
+                      <div class="svc-step-t">Chemistry and Contracting <em>Objectives and success measures</em></div>
+                    </div>
+                    <div class="svc-step">
+                      <div class="svc-step-n">2</div>
+                      <div class="svc-step-t">Structured Engagements <em>Sessions over 3–6 months</em></div>
+                    </div>
+                    <div class="svc-step">
+                      <div class="svc-step-n">3</div>
+                      <div class="svc-step-t">Review and Close <em>Progress review against outcomes</em></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="svc-footer">
+                  <button type="button" class="svc-btn" onclick="openModal('Executive and Leadership Coaching')">Book This Service</button>
+                </div>
+              </div>
+
+              <div class="svc-card reveal">
+                <div class="svc-head">
+                  <span class="svc-cat">Advisory</span>
+                  <div class="svc-name">Founder and CEO Scaling Advisory</div>
+                </div>
+                <div class="svc-body">
+                  <p class="svc-desc">
+                    Build the leadership systems and operating cadence needed for your next stage of growth.
+                  </p>
+                  <p class="svc-for">
+                    Best for: <span>Founders scaling teams, CEOs shifting from operator to architect</span>
+                  </p>
+                  <div class="svc-steps">
+                    <p class="svc-steps-label">How It Works</p>
+                    <div class="svc-step">
+                      <div class="svc-step-n">1</div>
+                      <div class="svc-step-t">Audit <em>Team structure, systems, bottlenecks</em></div>
+                    </div>
+                    <div class="svc-step">
+                      <div class="svc-step-n">2</div>
+                      <div class="svc-step-t">Roadmap Design <em>Operating model and systems plan</em></div>
+                    </div>
+                    <div class="svc-step">
+                      <div class="svc-step-n">3</div>
+                      <div class="svc-step-t">Implementation Advisory <em>Support as you execute and delegate</em></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="svc-footer">
+                  <button type="button" class="svc-btn" onclick="openModal('Founder and CEO Scaling Advisory')">Book This Service</button>
+                </div>
+              </div>
+
+              <div class="svc-card reveal">
+                <div class="svc-head">
+                  <span class="svc-cat">Sector Specialist</span>
+                  <div class="svc-name">Healthcare Leadership Training</div>
+                </div>
+                <div class="svc-body">
+                  <p class="svc-desc">
+                    Leadership training for healthcare professionals stepping into management—built for clinical realities.
+                  </p>
+                  <p class="svc-for">Best for: <span>Hospitals, HMOs, healthcare groups, and public health agencies</span></p>
+                  <div class="svc-steps">
+                    <p class="svc-steps-label">How It Works</p>
+                    <div class="svc-step">
+                      <div class="svc-step-n">1</div>
+                      <div class="svc-step-t">Context Assessment <em>Culture, hierarchy, management gaps</em></div>
+                    </div>
+                    <div class="svc-step">
+                      <div class="svc-step-n">2</div>
+                      <div class="svc-step-t">Programme Delivery <em>Adapted curriculum</em></div>
+                    </div>
+                    <div class="svc-step">
+                      <div class="svc-step-n">3</div>
+                      <div class="svc-step-t">Post-Programme Support <em>Coaching and impact review</em></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="svc-footer">
+                  <button type="button" class="svc-btn" onclick="openModal('Healthcare Leadership Training')">Book This Service</button>
+                </div>
+              </div>
+
+              <div class="svc-card reveal">
+                <div class="svc-head">
+                  <span class="svc-cat">Events and Speaking</span>
+                  <div class="svc-name">Speaking Engagements</div>
+                </div>
+                <div class="svc-body">
+                  <p class="svc-desc">
+                    Research-informed keynotes and sessions for corporate events, retreats, and leadership conferences.
+                  </p>
+                  <p class="svc-for">Best for: <span>Corporate events, annual retreats, leadership conferences, and HR summits</span></p>
+                  <div class="svc-steps">
+                    <p class="svc-steps-label">How It Works</p>
+                    <div class="svc-step">
+                      <div class="svc-step-n">1</div>
+                      <div class="svc-step-t">Brief and Alignment <em>Audience and outcomes</em></div>
+                    </div>
+                    <div class="svc-step">
+                      <div class="svc-step-n">2</div>
+                      <div class="svc-step-t">Session Delivery <em>Keynote, panel, or workshop</em></div>
+                    </div>
+                    <div class="svc-step">
+                      <div class="svc-step-n">3</div>
+                      <div class="svc-step-t">Post-Event Resource Pack <em>Optional takeaways and tools</em></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="svc-footer">
+                  <button type="button" class="svc-btn" onclick="openModal('Speaking Engagements')">Book This Service</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ PROBLEM STATEMENT ═══ -->
+    <section id="problem">
+      <div class="problem-inner">
+        <div class="reveal">
+          <div class="problem-kicker">the consulting gap</div>
+          <h2 class="problem-h2">Most consulting stops at the report.<br /><em>We start there.</em></h2>
+        </div>
+
+        <div class="problem-body reveal">
+          <div class="prob-photo-col">
+            <img class="prob-portrait" src="assets/img/image3.jpeg" alt="Damilola Olaniyi" />
+            <div class="prob-credit">
+              <div class="prob-credit-name">Damilola Olaniyi</div>
+              <div class="prob-credit-role">Founder, DOGLC</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="problem-text">
+              <p>
+                Many consultancies stop at analysis. DOGLC stays through implementation—building adoption, strengthening leadership
+                systems, and tracking measurable change from day one.
+              </p>
+            </div>
+
+            <div class="problem-points">
+              <div class="pp">
+                <div class="pp-num">01</div>
+                <div>
+                  <div class="pp-title">Context-specific</div>
+                  <div class="pp-body">Built around your organisation, not a borrowed template</div>
+                </div>
+              </div>
+              <div class="pp">
+                <div class="pp-num">02</div>
+                <div>
+                  <div class="pp-title">Defined process every time</div>
+                  <div class="pp-body">Clear steps, deliverables, and expected outcomes for every engagement</div>
+                </div>
+              </div>
+              <div class="pp">
+                <div class="pp-num">03</div>
+                <div>
+                  <div class="pp-title">Measurement from day one</div>
+                  <div class="pp-body">KPIs and progress reporting built in, not added as an afterthought</div>
+                </div>
+              </div>
+              <div class="pp">
+                <div class="pp-num">04</div>
+                <div>
+                  <div class="pp-title">Cross-sector depth</div>
+                  <div class="pp-body">From boardrooms to public health institutions, we speak your language</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ WHO WE SUPPORT ═══ -->
+    <section id="support">
+      <div class="support-inner">
+        <div class="reveal">
+          <div class="sec-eyebrow">Who we support</div>
+          <h2 class="sec-h2-light">
+            The most important work deserves<br />
+            <em>the right partner.</em>
+          </h2>
+        </div>
+
+        <div class="support-tabs reveal">
+          <button type="button" class="stab active" onclick="switchSupport(this,'s-corp')">Corporate Organisations</button>
+          <button type="button" class="stab" onclick="switchSupport(this,'s-health')">Healthcare Institutions</button>
+          <button type="button" class="stab" onclick="switchSupport(this,'s-founder')">Founders and SMEs</button>
+          <button type="button" class="stab" onclick="switchSupport(this,'s-gov')">Government and Public Sector</button>
+        </div>
+
+        <div class="support-panels reveal">
+          <div class="support-panel active" id="s-corp">
+            <div>
+              <div class="sp-kicker">Corporate Organisations</div>
+              <h3 class="sp-h3">Strategic leadership for organisations under pressure to perform.</h3>
+              <p class="sp-body">
+                We deliver structured programmes that build leadership capacity and embed lasting change — tied to your
+                business outcomes, not a generic curriculum.
+              </p>
+              <div class="sp-points">
+                <div class="sp-point"><div class="sp-dot"></div><div class="sp-pt">Change programmes with measurable adoption targets</div></div>
+                <div class="sp-point"><div class="sp-dot"></div><div class="sp-pt">Executive development tied to business outcomes</div></div>
+                <div class="sp-point"><div class="sp-dot"></div><div class="sp-pt">HR systems built to scale</div></div>
+              </div>
+              <button type="button" class="btn-outline-dark" onclick="openModal('Executive Leadership Development Programme')">
+                Book a Session
+              </button>
+            </div>
+
+            <div class="sp-visual sp-photo">
+              <img src="assets/img/support-corporate.jpg" alt="Leadership development session" class="sp-photo-img" />
+              <div class="sp-photo-overlay">
+                <div class="sp-visual-label">Client result</div>
+                <div class="sp-visual-stat">80%</div>
+                <div class="sp-visual-desc">Change adoption rate achieved within three months</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="support-panel" id="s-health">
+            <div>
+              <div class="sp-kicker">Healthcare Institutions</div>
+              <h3 class="sp-h3">Leadership built for the unique demands of healthcare.</h3>
+              <p class="sp-body">
+                Clinically excellent professionals stepping into management roles need a different kind of support. We
+                deliver programmes built specifically for healthcare settings.
+              </p>
+              <div class="sp-points">
+                <div class="sp-point"><div class="sp-dot"></div><div class="sp-pt">Adapted for clinical culture and hierarchy</div></div>
+                <div class="sp-point"><div class="sp-dot"></div><div class="sp-pt">New manager transitions for clinical staff</div></div>
+                <div class="sp-point"><div class="sp-dot"></div><div class="sp-pt">Post-programme coaching and support</div></div>
+              </div>
+              <button type="button" class="btn-outline-dark" onclick="openModal('Healthcare Leadership Training')">Book a Session</button>
+            </div>
+            <div class="sp-visual">
+              <div class="sp-visual-bg"></div>
+              <div class="sp-visual-label">Programme impact</div>
+              <div class="sp-visual-stat">12 wks</div>
+              <div class="sp-visual-desc">
+                Typical delivery timeline for a new manager development cohort, including assessment and post-programme
+                coaching
+              </div>
+            </div>
+          </div>
+
+          <div class="support-panel" id="s-founder">
+            <div>
+              <div class="sp-kicker">Founders and SMEs</div>
+              <h3 class="sp-h3">The skills that build a company are not always the skills that scale one.</h3>
+              <p class="sp-body">
+                We work with founders and CEOs to build the leadership infrastructure and management systems needed for
+                the next stage of growth.
+              </p>
+              <div class="sp-points">
+                <div class="sp-point"><div class="sp-dot"></div><div class="sp-pt">Business and leadership audit</div></div>
+                <div class="sp-point"><div class="sp-dot"></div><div class="sp-pt">Scaling roadmap: operating model and hires</div></div>
+                <div class="sp-point"><div class="sp-dot"></div><div class="sp-pt">Hands-on advisory through implementation</div></div>
+              </div>
+              <button type="button" class="btn-outline-dark" onclick="openModal('Founder and CEO Scaling Advisory')">Book a Session</button>
+            </div>
+            <div class="sp-visual">
+              <div class="sp-visual-bg"></div>
+              <div class="sp-visual-label">Engagement focus</div>
+              <div class="sp-visual-stat">3 steps</div>
+              <div class="sp-visual-desc">Audit, roadmap design, and implementation advisory — a defined process with clear deliverables at every stage</div>
+            </div>
+          </div>
+
+          <div class="support-panel" id="s-gov">
+            <div>
+              <div class="sp-kicker">Government and Public Sector</div>
+              <h3 class="sp-h3">Effective leadership in complex, high-stakes environments.</h3>
+              <p class="sp-body">
+                We bring experience across government institutions — delivering leadership and change programmes that work
+                within public sector realities, not around them.
+              </p>
+              <div class="sp-points">
+                <div class="sp-point"><div class="sp-dot"></div><div class="sp-pt">Leadership development for public sector realities</div></div>
+                <div class="sp-point"><div class="sp-dot"></div><div class="sp-pt">Change management across complex stakeholder environments</div></div>
+                <div class="sp-point"><div class="sp-dot"></div><div class="sp-pt">Culture work in mission-driven institutions</div></div>
+              </div>
+              <button type="button" class="btn-outline-dark" onclick="openModal('Executive Leadership Development Programme')">Book a Session</button>
+            </div>
+            <div class="sp-visual">
+              <div class="sp-visual-bg"></div>
+              <div class="sp-visual-label">Our commitment</div>
+              <div class="sp-visual-stat">100%</div>
+              <div class="sp-visual-desc">Of engagements delivered with defined KPIs and measurement frameworks from day one</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CAPABILITIES TAG CLOUD ═══ -->
+    <section id="capabilities">
+      <div class="capabilities-inner">
+        <div class="reveal">
+          <div class="sec-eyebrow-dark">Core capabilities</div>
+          <h2 class="sec-h2">How can you leverage DOGLC?</h2>
+        </div>
+
+        <div class="cap-cloud reveal">
+          <span class="cap-tag featured" onclick="showSvcTab('org');scrollToSection('services')">Change Management</span>
+          <span class="cap-tag featured" onclick="showSvcTab('org');scrollToSection('services')">Culture Transformation</span>
+          <span class="cap-tag featured" onclick="showSvcTab('leadership');scrollToSection('services')">Executive Development</span>
+          <span class="cap-tag" onclick="showSvcTab('leadership');scrollToSection('services')">New Manager Transition</span>
+          <span class="cap-tag" onclick="showSvcTab('leadership');scrollToSection('services')">HR Audit and Restructuring</span>
+          <span class="cap-tag featured" onclick="showSvcTab('individual');scrollToSection('services')">Executive Coaching</span>
+          <span class="cap-tag" onclick="showSvcTab('org');scrollToSection('services')">Team Performance</span>
+          <span class="cap-tag" onclick="showSvcTab('individual');scrollToSection('services')">Healthcare Leadership Training</span>
+          <span class="cap-tag featured" onclick="showSvcTab('individual');scrollToSection('services')">Founder and CEO Advisory</span>
+          <span class="cap-tag" onclick="showSvcTab('individual');scrollToSection('services')">Keynote Speaking</span>
+          <span class="cap-tag" onclick="scrollToSection('support')">Corporate Organisations</span>
+          <span class="cap-tag" onclick="switchSupport(document.querySelectorAll('.stab')[1],'s-health');scrollToSection('support')">Healthcare Institutions</span>
+          <span class="cap-tag" onclick="switchSupport(document.querySelectorAll('.stab')[2],'s-founder');scrollToSection('support')">Founders and SMEs</span>
+          <span class="cap-tag" onclick="switchSupport(document.querySelectorAll('.stab')[3],'s-gov');scrollToSection('support')">Government and Public Sector</span>
+          <span class="cap-tag" onclick="scrollToSection('support')">Financial Services</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ VALUE ═══ -->
+    <section id="value">
+      <div class="value-inner reveal">
+        <div class="value-left">
+          <div class="sec-eyebrow">Value we create</div>
+          <h2 class="value-h2">Outcomes that are tracked, measured, and reported.</h2>
+        </div>
+        <div class="value-right">
+          <div class="vg"><div class="vg-n">80%</div><div class="vg-l">Average change adoption rate across transformation programmes</div></div>
+          <div class="vg"><div class="vg-n">12 wks</div><div class="vg-l">Typical delivery timeline for new manager development cohorts</div></div>
+          <div class="vg"><div class="vg-n">100%</div><div class="vg-l">Engagements delivered with defined KPIs and measurement frameworks</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CTA + BOOKING ═══ -->
+    <section id="cta">
+      <div class="cta-inner reveal">
+        <div class="cta-kicker">Get started</div>
+        <h2 class="cta-h2">Ready to work with us?</h2>
+        <p class="cta-p">Tell us what you are working through. We will confirm your session within 24 hours.</p>
+      </div>
+
+      <div class="booking-wrap reveal">
+        <div class="booking-left">
+          <div class="booking-steps">
+            <div class="bk-step">
+              <div class="bk-step-n">1</div>
+              <div>
+                <div class="bk-step-title">Choose a service</div>
+                <div class="bk-step-body">
+                  Select the service most relevant to your challenge. Not sure? Choose General Enquiry and we'll help you identify the right fit.
+                </div>
+              </div>
+            </div>
+            <div class="bk-step">
+              <div class="bk-step-n">2</div>
+              <div>
+                <div class="bk-step-title">Submit your request</div>
+                <div class="bk-step-body">Fill in the form — this simply opens the conversation.</div>
+              </div>
+            </div>
+            <div class="bk-step">
+              <div class="bk-step-n">3</div>
+              <div>
+                <div class="bk-step-title">We confirm within 24 hours</div>
+                <div class="bk-step-body">A DOGLC consultant will reach out to confirm your session, clarify your needs, and share what to prepare.</div>
+              </div>
+            </div>
+          </div>
+          <div class="booking-note">
+            <strong>Not ready to book?</strong> Email us directly at <a href="mailto:info@damilolaolaniyi.com">info@damilolaolaniyi.com</a>
+          </div>
+        </div>
+
+        <div class="booking-right">
+          <form
+            name="booking"
+            method="POST"
+            id="bookingForm"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+          >
+            <input type="hidden" name="form-name" value="booking" />
+            <p style="display: none"><input name="bot-field" /></p>
+
+            <div class="form-row">
+              <div class="form-group"><label>First Name *</label><input type="text" name="firstName" required placeholder="Adaeze" /></div>
+              <div class="form-group"><label>Last Name *</label><input type="text" name="lastName" required placeholder="Okafor" /></div>
+            </div>
+            <div class="form-group"><label>Work Email *</label><input type="email" name="email" required placeholder="adaeze@company.com" /></div>
+            <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="+1 555 000 0000" /></div>
+            <div class="form-group"><label>Organisation *</label><input type="text" name="organisation" required placeholder="Your organisation" /></div>
+            <div class="form-group">
+              <label>Service *</label>
+              <select name="service" required>
+                <option value="">Select a service</option>
+                <optgroup label="Organisational">
+                  <option>Change Management and Implementation</option>
+                  <option>Organisational Culture Transformation</option>
+                  <option>Team Performance and Productivity Intervention</option>
+                </optgroup>
+                <optgroup label="Leadership and HR">
+                  <option>Executive Leadership Development Programme</option>
+                  <option>New Manager Transition Programme</option>
+                  <option>HR Systems Audit and Restructuring</option>
+                </optgroup>
+                <optgroup label="Individual and Advisory">
+                  <option>Personal Mentorship</option>
+                  <option>Executive and Leadership Coaching</option>
+                  <option>Founder and CEO Scaling Advisory</option>
+                  <option>Healthcare Leadership Training</option>
+                  <option>Speaking Engagements</option>
+                </optgroup>
+                <option value="General Enquiry">Not sure — General Enquiry</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Your Role</label>
+              <select name="role">
+                <option value="">Select your role</option>
+                <option>CEO / MD</option>
+                <option>Director</option>
+                <option>Head of HR / People</option>
+                <option>Head of Department</option>
+                <option>Senior Manager</option>
+                <option>Founder / Entrepreneur</option>
+                <option>Individual / Professional</option>
+                <option>Event Organiser</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>What are you working through?</label>
+              <textarea name="message" rows="3" placeholder="Briefly describe the challenge or outcome you are looking to address."></textarea>
+            </div>
+            <button type="submit" class="form-submit" id="formSubmit">Submit Booking Request</button>
+            <p class="form-note" style="text-align: center; margin-top: 14px">No payment required. Confirmation within 24 hours.</p>
+          </form>
+
+          <div class="form-success" id="formSuccess">
+            <div class="form-success-icon">✓</div>
+            <h3>Request Received</h3>
+            <p>A DOGLC consultant will be in touch within 24 hours to confirm your session and next steps. Please check your email.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer id="why">
+      <div class="ft-inner">
+        <div class="ft-top">
+          <div>
+            <a class="ft-brand" href="#hero" aria-label="DOGLC home">
+              <img src="assets/img/logo.png" alt="DOGLC" />
+            </a>
+            <p class="ft-tagline">Developing Leaders. Strengthening Systems. Transforming Organisations.</p>
+            <p class="ft-contact">
+              <a href="mailto:info@damilolaolaniyi.com">info@damilolaolaniyi.com</a>
+            </p>
+          </div>
+
+          <div class="ft-col">
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#support">Who we support</a></li>
+              <li><a href="#problem">Why DOGLC</a></li>
+              <li><a href="#cta" onclick="openModal('General Enquiry')">Book a Session</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="ft-bottom">
+          <p class="ft-copy">© 2025 Damilola Olaniyi Global Leadership Consultancy. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
