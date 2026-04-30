@@ -75,41 +75,30 @@ function showSvcTab(cat, btn) {
 window.showSvcTab = showSvcTab;
 
 // Booking form submit (Netlify Forms)
+// Use native submission (most reliable on Netlify), then redirect back with ?submitted=1
 const bookingForm = document.getElementById("bookingForm");
 if (bookingForm) {
-  bookingForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
+  bookingForm.addEventListener("submit", () => {
     const btn = document.getElementById("formSubmit");
     if (btn) {
       btn.disabled = true;
       btn.textContent = "Submitting...";
     }
-
-    try {
-      const data = new FormData(bookingForm);
-      // Netlify expects application/x-www-form-urlencoded
-      const res = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(data).toString(),
-      });
-
-      if (res.ok) {
-        bookingForm.style.display = "none";
-        document.getElementById("formSuccess").style.display = "block";
-        return;
-      }
-    } catch {
-      // fall through
-    }
-
-    if (btn) {
-      btn.disabled = false;
-      btn.textContent = "Submit Booking Request";
-    }
-    alert("Unable to submit right now. Please email info@damilolaolaniyi.com directly.");
   });
+}
+
+// Show success state after Netlify redirect (?submitted=1)
+try {
+  const url = new URL(window.location.href);
+  if (url.searchParams.get("submitted") === "1") {
+    const form = document.getElementById("bookingForm");
+    const success = document.getElementById("formSuccess");
+    if (form) form.style.display = "none";
+    if (success) success.style.display = "block";
+    document.getElementById("cta")?.scrollIntoView({ behavior: "smooth" });
+  }
+} catch {
+  // ignore URL parsing errors
 }
 
 // Keep "Book This Service" buttons pre-filling the service dropdown
