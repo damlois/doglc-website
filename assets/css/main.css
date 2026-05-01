@@ -57,7 +57,8 @@ nav {
   transition:
     background 0.3s,
     box-shadow 0.3s;
-  height: 68px;
+  padding-top: env(safe-area-inset-top);
+  height: calc(68px + env(safe-area-inset-top));
   display: flex;
   align-items: center;
 }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <!-- Minimal "O / globe" mark in brand blue -->
+  <g stroke="#1f4aa8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Outer ring -->
+    <circle cx="32" cy="32" r="22" />
+
+    <!-- Longitude (vertical curve) -->
+    <path d="M32 10c-6 6-9 14-9 22s3 16 9 22" />
+    <path d="M32 10c6 6 9 14 9 22s-3 16-9 22" />
+
+    <!-- Latitude lines -->
+    <path d="M14 32h36" />
+    <path d="M18 24c4 2 9 3 14 3s10-1 14-3" />
+    <path d="M18 40c4-2 9-3 14-3s10 1 14 3" />
+  </g>
+</svg>
