@@ -134,7 +134,7 @@
           <h1 class="hero-h1">
             Transformation that <em>lasts.</em>
           </h1>
-          <p class="hero-sub">We develop leaders, strengthen systems, and deliver measurable change—staying with you through implementation.</p>
+          <p class="hero-sub">We develop leaders, strengthen systems, and deliver measurable change, staying with you through implementation.</p>
           <div class="hero-btns">
             <a href="#services" class="btn-primary">Explore Services</a>
             <a href="#cta" class="btn-outline-light" onclick="openModal('General Enquiry');return false;">Start a Conversation</a>
@@ -208,7 +208,7 @@
           <div class="t-card">
             <div class="t-stars">★★★★★</div>
             <p class="t-quote">
-              "This training showed that excellence goes beyond clinical expertise—it requires strong leadership, efficient systems, and cohesive teamwork. It has helped us operate with greater clarity and purpose."
+              "This training showed that excellence goes beyond clinical expertise; it requires strong leadership, efficient systems, and cohesive teamwork. It has helped us operate with greater clarity and purpose."
             </p>
             <div class="t-role">Chief Medical Director, AHW</div>
           </div>
@@ -550,7 +550,7 @@
                 </div>
                 <div class="svc-body">
                   <p class="svc-desc">
-                    Leadership training for healthcare professionals stepping into management—built for clinical realities.
+                    Leadership training for healthcare professionals stepping into management, built for clinical realities.
                   </p>
                   <p class="svc-for">Best for: <span>Hospitals, HMOs, healthcare groups, and public health agencies</span></p>
                   <div class="svc-steps">
@@ -630,7 +630,7 @@
           <div>
             <div class="problem-text">
               <p>
-                Many consultancies stop at analysis. DOGLC stays through implementation—building adoption, strengthening leadership
+                Many consultancies stop at analysis. DOGLC stays through implementation, building adoption, strengthening leadership
                 systems, and tracking measurable change from day one.
               </p>
             </div>
@@ -694,7 +694,7 @@
               <div class="sp-kicker">Corporate Organisations</div>
               <h3 class="sp-h3">Strategic leadership for organisations under pressure to perform.</h3>
               <p class="sp-body">
-                We deliver structured programmes that build leadership capacity and embed lasting change — tied to your
+                We deliver structured programmes that build leadership capacity and embed lasting change, tied to your
                 business outcomes, not a generic curriculum.
               </p>
               <div class="sp-points">
@@ -774,7 +774,7 @@
                 <div class="sp-visual-label">Engagement focus</div>
                 <div class="sp-visual-stat">3 steps</div>
                 <div class="sp-visual-desc">
-                  Audit, roadmap design, and implementation advisory — a defined process with clear deliverables at every stage
+                  Audit, roadmap design, and implementation advisory: a defined process with clear deliverables at every stage
                 </div>
               </div>
             </div>
@@ -785,7 +785,7 @@
               <div class="sp-kicker">Government and Public Sector</div>
               <h3 class="sp-h3">Effective leadership in complex, high-stakes environments.</h3>
               <p class="sp-body">
-                We bring experience across government institutions — delivering leadership and change programmes that work
+                We bring experience across government institutions, delivering leadership and change programmes that work
                 within public sector realities, not around them.
               </p>
               <div class="sp-points">
@@ -879,7 +879,7 @@
               <div class="bk-step-n">2</div>
               <div>
                 <div class="bk-step-title">Submit your request</div>
-                <div class="bk-step-body">Fill in the form — this simply opens the conversation.</div>
+                <div class="bk-step-body">Fill in the form. This simply opens the conversation.</div>
               </div>
             </div>
             <div class="bk-step">
@@ -897,16 +897,11 @@
         
 
         <div class="booking-right">
-          <form
-            name="booking"
-            method="POST"
-            id="bookingForm"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-            action="/?submitted=1"
-          >
-            <input type="hidden" name="form-name" value="booking" />
-            <p style="display: none"><input name="bot-field" /></p>
+          <form name="booking" method="post" id="bookingForm" action="#" novalidate>
+            <div class="hp-field" aria-hidden="true">
+              <label for="bookingHp">Leave this field empty</label>
+              <input type="text" id="bookingHp" name="website" tabindex="-1" autocomplete="off" />
+            </div>
 
             <div class="form-row">
               <div class="form-group"><label>First Name *</label><input type="text" name="firstName" required placeholder="Adaeze" /></div>
@@ -936,7 +931,7 @@
                   <option>Healthcare Leadership Training</option>
                   <option>Speaking Engagements</option>
                 </optgroup>
-                <option value="General Enquiry">Not sure — General Enquiry</option>
+                <option value="General Enquiry">Not sure: General Enquiry</option>
               </select>
             </div>
             <div class="form-group">
@@ -958,6 +953,7 @@
               <label>What are you working through?</label>
               <textarea name="message" rows="3" placeholder="Briefly describe the challenge or outcome you are looking to address."></textarea>
             </div>
+            <p class="form-error" id="formError" role="alert" hidden></p>
             <button type="submit" class="form-submit" id="formSubmit">Submit Booking Request</button>
             <p class="form-note" style="text-align: center; margin-top: 14px">No payment required. Confirmation within 24 hours.</p>
           </form>

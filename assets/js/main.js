@@ -74,20 +74,87 @@ function showSvcTab(cat, btn) {
 }
 window.showSvcTab = showSvcTab;
 
-// Booking form submit (Netlify Forms)
-// Use native submission (most reliable on Netlify), then redirect back with ?submitted=1
+// Booking form: POST to Vercel serverless /api/booking (see api/booking.js)
 const bookingForm = document.getElementById("bookingForm");
 if (bookingForm) {
-  bookingForm.addEventListener("submit", () => {
+  bookingForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
     const btn = document.getElementById("formSubmit");
+    const formError = document.getElementById("formError");
+    const success = document.getElementById("formSuccess");
+    const label = btn ? btn.textContent : "";
+
+    if (formError) {
+      formError.hidden = true;
+      formError.textContent = "";
+    }
+
+    const fd = new FormData(bookingForm);
+    if (String(fd.get("website") || "").trim() !== "") {
+      return;
+    }
+
+    const payload = {
+      firstName: fd.get("firstName"),
+      lastName: fd.get("lastName"),
+      email: fd.get("email"),
+      phone: fd.get("phone"),
+      organisation: fd.get("organisation"),
+      service: fd.get("service"),
+      role: fd.get("role"),
+      message: fd.get("message"),
+    };
+
     if (btn) {
       btn.disabled = true;
       btn.textContent = "Submitting...";
     }
+
+    try {
+      const res = await fetch("/api/booking", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(payload),
+      });
+      let data = {};
+      try {
+        data = await res.json();
+      } catch {
+        data = {};
+      }
+
+      if (!res.ok) {
+        const msg =
+          typeof data.error === "string"
+            ? data.error
+            : "Something went wrong. Please try again or email info@damilolaolaniyi.com.";
+        throw new Error(msg);
+      }
+
+      bookingForm.style.display = "none";
+      if (success) success.style.display = "block";
+      document.getElementById("cta")?.scrollIntoView({ behavior: "smooth" });
+    } catch (err) {
+      const msg =
+        err instanceof TypeError
+          ? "Could not reach the server. If you are testing locally, run `vercel dev` so /api/booking is available."
+          : err instanceof Error
+            ? err.message
+            : "Something went wrong. Please try again or email info@damilolaolaniyi.com.";
+      if (formError) {
+        formError.textContent = msg;
+        formError.hidden = false;
+      }
+    } finally {
+      if (btn) {
+        btn.disabled = false;
+        btn.textContent = label || "Submit Booking Request";
+      }
+    }
   });
 }
 
-// Show success state after Netlify redirect (?submitted=1)
+// Legacy: success after old Netlify redirect (?submitted=1)
 try {
   const url = new URL(window.location.href);
   if (url.searchParams.get("submitted") === "1") {
